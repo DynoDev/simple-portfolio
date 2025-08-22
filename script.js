@@ -34,7 +34,9 @@ function goTo(n) {
         'projLink1': '',
         'projLink2': '',
     }
-    if (urls) {
+    if (n == 'mail') {
+        window.location.href = urls[n];
+    } else if (urls) {
         window.open(urls[n], '_blank');
     }
 }
