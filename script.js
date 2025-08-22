@@ -29,10 +29,10 @@ function goTo(n) {
         'github': 'https://github.com/DynoDev',
         'linkedin': 'https://www.linkedin.com/in/najwan-aji-a97284300',
         'instagram': 'https://www.instagram.com/',
+        'mail': 'mailto:najwansudarma16@gmail.com',
 
         'projLink1': '',
         'projLink2': '',
-        'projLink3': '',
     }
     if (urls) {
         window.open(urls[n], '_blank');
