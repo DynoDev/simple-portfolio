@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Najwan's Portfolio</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-left">
+            <p style="font-family:monospace; font-size: 20px;">/home/najwan/portfolio.html</p>
+        </div>
+        <div class="topbar-middle">
+            <div class="dropdown">
+                <button class="dropbtn" id="currentPage">Home <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a onclick="switchContent('home')">Home</a>
+                    <a onclick="switchContent('projects')">Projects</a>
+                </div>
+            </div>
+        </div>
+        <div class="topbar-right">
+            <div class="window-controls">
+                <button class="window-btn minimize"><i class="fa-solid fa-window-minimize"></i></button>
+                <button class="window-btn maximize"><i class="fa-regular fa-window-maximize"></i></button>
+                <button class="window-btn close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="home">
+        <div class="section">
+            <div class="header">
+                <h1 id="greeting">Greetings, my name is Najwan.</h1>
+                <h2 id="welcome"></h2>
+            </div>
+
+            <div class="contacts">
+                <div class="socials">
+                    <h2>Connect With Me</h2>
+                    <button class="pixel" onclick="goTo('linkedin')"><i class="fab fa-linkedin"></i>LinkedIn</button>
+                    <button class="pixel" onclick="goTo('instagram')"><i class="fab fa-instagram"></i>Instagram</button>
+                </div>
+                <div style="margin-left: 25px;">
+                    <h2>Or Email</h2>
+                    <button class="email"><i class="fa-solid fa-envelope"></i>najwansudarma16@gmail.com</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section info-boxes">
+            <div class="box-content">
+                <h3>About Me</h3>
+                <p>I am currently an undergraduate <b>Computer Science</b> student in my 2nd year from Indonesia, expected to <b>graduate in 2027</b>, and passionate about coding and how the Internet works with its ever-changing and rapid innovation and improvements.</p>
+            </div>
+
+            <div class="box-content">
+                <h3>Education</h3>
+                <p>Bachelor of Computer Science (Honours)</p>
+                <p>Specialisation in <b>AI and Data Science</b></p>
+                <br>
+                <p>@ Taylor's University, Malaysia</p>
+            </div>
+
+            <div class="box-content" style="cursor: pointer; display: flex; justify-content: center; align-items: center;" onclick="showModal('skills')">
+                <h2 style="text-align: center;">Click To See My Skills !</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects">
+        <h2 style="text-align: center;">Projects</h2>
+        <div class="project-container">
+            <div class="project-info active">
+                <h3>Simple Electron App</h3>
+                <p>An application created with HTML, compiled by electron.js to function like an app instead of a website, featuring two functions which are a random picker and a messenger that sends texts through a Discord webhook.</p>
+                <div class="project-tags">
+                    <span>Electron</span>
+                    <span>HTML/CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <button class="pixel" onclick="goTo('projLink1')"><i class="fab fa-github"></i> View Project</button>
+            </div>
+
+            <div class="project-info">
+                <h3>Numbers to Words</h3>
+                <p>A simple Python program that converts numbers into their word representation, useful for generating text-based representations of numerical values.</p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Text Processing</span>
+                </div>
+                <button class="pixel" onclick="goTo('projLink2')"><i class="fab fa-github"></i> View Project</button>
+            </div>
+
+            <div class="project-preview">
+                <div class="preview-container">
+                    <img src="media/project1.gif" class="preview-slide active" alt="Project 1 Preview">
+                    <img src="media/project2.gif" class="preview-slide" alt="Project 2 Preview">
+                </div>
+                <div class="preview-nav">
+                    <button class="nav-btn prev" onclick="changeSlide(-1)">
+                        <i class="fas fa-chevron-left" style="color: white;"></i>
+                    </button>
+                    <div class="preview-dots">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                    </div>
+                    <button class="nav-btn next" onclick="changeSlide(1)">
+                        <i class="fas fa-chevron-right" style="color: white;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal boxes -->
+    <div class="modalBox" id="skills">
+        <div class="topbar">
+            <div class="window-controls">
+                <button class="window-btn minimize"><i class="fa-solid fa-window-minimize"></i></button>
+                <button class="window-btn maximize"><i class="fa-regular fa-window-maximize"></i></button>
+                <button class="window-btn close" onclick="hideModal('skills')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <div class="mButtons">
+                <button class="mTab active" onclick="showSkillContent('hard')">
+                    <i class="fas fa-code"></i> Hard Skills
+                </button>
+                <button class="mTab" onclick="showSkillContent('soft')">
+                    <i class="fas fa-users"></i> Soft Skills
+                </button>
+                <div class="tooltip">
+                    <button class="mTab" onclick="goTo('github')"><i class="fab fa-github"></i> GitHub</button>
+                    <span class="tooltiptext">View my projects on GitHub</span>
+                </div>
+            </div>
+
+            <div class="main">
+                <div id="hard-skills" class="panel active">
+                    <div class="panel-info">
+                        <div>
+                            <h2>Languages</h2>
+                            <h3>Programming</h3>
+                            <ul>
+                                <li>HTML and CSS</li>
+                                <li>JavaScript</li>
+                                <li>Python</li>
+                                <li>C++</li>
+                                <li>Java</li>
+                                <li>Bash/Shell Scripting</li>
+                            </ul>
+                            <h3>Spoken</h3>
+                            <ul>
+                                <li>English</li>
+                                <li>Indonesian</li>
+                                <li>Malay</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2>Tools</h2>
+                            <h3>Development</h3>
+                            <ul>
+                                <li>Linux</li>
+                                <li>Git and GitHub</li>
+                                <li>Visual Studio Code</li>
+                            </ul>
+                            <h3>Creative</h3>
+                            <ul>
+                                <li>Canva</li>
+                                <li>Figma</li>
+                                <li>Adobe Premiere Pro</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="soft-skills" class="panel">
+                    <h2>Interpersonal</h2>
+                    <ul>
+                        <li>Team Collaboration</li>
+                        <li>Problem Solving</li>
+                        <li>Communication</li>
+                        <li>Time Management</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- black overlay for modal boxes aesthetic -->
+    <div id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
